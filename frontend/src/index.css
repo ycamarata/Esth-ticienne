@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+/* 
+/* Animation fadeIn (utilisé dans le panel confirmation) */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* Focus visible sur bouton */
+button:focus {
+  outline: 3px solid #a31717; /* Cyan clair */
+  outline-offset: 2px;
+}
+
+/* Custom styles FullCalendar overrides */
+.fc-toolbar {
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: larger;
+}
+
+.fc .fc-button {
+  background-color: #42cef1;
+  color: white;
+  border-radius: 9999px;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.fc-button:hover,
+.fc-button:focus {
+  background-color: #0ea5e9;
+  outline: none;
+}
+
+/* Active button style */
+.fc-button .fc-button-active {
+  background-color: #f4f8fa;
+}
+
+/* Forcing cursor on disabled */
+.fc-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Pour augmenter la hauteur des plages horaires */
+.fc .fc-timegrid-slot {
+height: 40px !important; /* par défaut c'est plutôt 20-30px, à ajuster */
+}
+
+/* Pour augmenter la largeur des colonnes jour (les cellules) */
+.fc-timegrid-col {
+  min-width: 140px !important; /* Ajuste selon ta préférence */
+}
+
+/* Pour que le label des horaires soit plus grand */
+.fc-timegrid-slot-label-cushion {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #059669; /* exemple vert émeraude */
+}
+
+/* Pour augmenter la taille des headers jours */
+.fc-col-header-cell-cushion {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #004ef5; /* bleu */
+} 
+
+.fc-event-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 5%;
+  font-weight: 500; /* Ajuste le poids de la police */
+ 
+}
